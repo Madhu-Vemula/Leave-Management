@@ -1,0 +1,19 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface authState {
+    isLogin: boolean,
+}
+const initialState: authState = {
+    isLogin: false,
+}
+const authSlice = createSlice({
+    name: 'auth',
+    initialState,
+    reducers: {
+        setLogin: (state: authState, action: PayloadAction<boolean>):void=> {
+            state.isLogin = action.payload
+        },
+    }
+})
+export const { setLogin } = authSlice.actions;
+export default authSlice

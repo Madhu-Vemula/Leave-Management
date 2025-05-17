@@ -1,0 +1,126 @@
+{
+  "leaves": [
+    {
+      "id": "e510",
+      "empId": "1740",
+      "email": "madhu.vemula@pal.tech",
+      "dayDifference": 4,
+      "status": "approved",
+      "leaveType": "paid",
+      "reason": "Fver",
+      "startDate": "2025-05-17",
+      "endDate": "2025-05-20",
+      "respondedBy": "sreekar@pal.tech"
+    },
+    {
+      "id": "9cce",
+      "empId": "141",
+      "email": "sreekar@pal.tech",
+      "dayDifference": 3,
+      "status": "Cancelled",
+      "leaveType": "paid",
+      "reason": "no",
+      "startDate": "2025-05-23",
+      "endDate": "2025-05-25"
+    },
+    {
+      "id": "355d",
+      "empId": "141",
+      "email": "sreekar@pal.tech",
+      "dayDifference": 2,
+      "status": "approved",
+      "leaveType": "paid",
+      "reason": "sick",
+      "startDate": "2025-05-23",
+      "endDate": "2025-05-24",
+      "respondedBy": "hr@pal.tech"
+    },
+    {
+      "id": "f20c",
+      "empId": "1740",
+      "email": "madhu.vemula@pal.tech",
+      "dayDifference": 7,
+      "status": "Pending",
+      "leaveType": "paid",
+      "reason": "sick",
+      "startDate": "2025-05-17",
+      "endDate": "2025-05-23"
+    },
+    {
+      "id": "4912",
+      "empId": "141",
+      "email": "sreekar@pal.tech",
+      "dayDifference": 8,
+      "status": "Pending",
+      "leaveType": "unpaid",
+      "reason": "sick",
+      "startDate": "2025-05-23",
+      "endDate": "2025-05-30"
+    },
+    {
+      "id": "7c8b",
+      "empId": "1742",
+      "email": "harsha.musku@pal.tech",
+      "dayDifference": 4,
+      "status": "approved",
+      "leaveType": "unpaid",
+      "reason": "Fever",
+      "startDate": "2025-05-16",
+      "endDate": "2025-05-19",
+      "respondedBy": "suketh@pal.tech"
+    },
+    {
+      "id": "90ac",
+      "empId": "1740",
+      "email": "madhu.vemula@pal.tech",
+      "dayDifference": 7,
+      "status": "Pending",
+      "leaveType": "paid",
+      "reason": "sick",
+      "startDate": "2025-05-22",
+      "endDate": "2025-05-28"
+    }
+  ],
+  "employees": [
+    {
+      "id": "e358",
+      "empId": "1740",
+      "name": "madhu",
+      "email": "madhu.vemula@pal.tech",
+      "role": "employee",
+      "managerEmail": "sreekar@pal.tech",
+      "password": "madhu@pal",
+      "leaveBalance": 2
+    },
+    {
+      "id": "9091",
+      "empId": "141",
+      "name": "Sreekar",
+      "email": "sreekar@pal.tech",
+      "role": "manager",
+      "managerEmail": "hr@pal.tech",
+      "password": "sreekar@pal",
+      "leaveBalance": 18
+    },
+    {
+      "id": "4928",
+      "empId": "1742",
+      "name": "Harsha",
+      "email": "harsha.musku@pal.tech",
+      "role": "employee",
+      "managerEmail": "suketh@pal.tech",
+      "password": "harsha@pal",
+      "leaveBalance": 20
+    },
+    {
+      "id": "a152",
+      "empId": "142",
+      "name": "Suketh",
+      "email": "suketh@pal.tech",
+      "role": "manager",
+      "managerEmail": "hr@pal.tech",
+      "password": "suketh@pal",
+      "leaveBalance": 20
+    }
+  ]
+}

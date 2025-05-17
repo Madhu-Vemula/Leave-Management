@@ -1,0 +1,166 @@
+leave-management-system/
+│
+├── public/                        # Static files
+│   └── index.html
+│
+├── src/
+│   ├── assets/                   # Logos, icons, images
+│
+│   ├── components/              # Reusable UI components
+│   │   ├── common/              # Buttons, Inputs, Modal, Charts (Donut)
+│   │   └── layout/              # Header, Sidebar, Role-based layout components
+│
+│   ├── features/                # Feature-specific logic and components
+│   │   ├── auth/                # Login, session handling
+│   │   │   ├── Login.jsx
+│   │   │   ├── authSlice.js
+│   │   │   └── authUtils.js
+│   │   ├── leave/               # Leave-related features
+│   │   │   ├── LeaveForm.jsx
+│   │   │   ├── LeaveHistory.jsx
+│   │   │   ├── LeaveStatusCard.jsx
+│   │   │   └── leaveSlice.js
+│   │   ├── employee/            # Employee management (HR)
+│   │   │   ├── EmployeeList.jsx
+│   │   │   ├── EmployeeForm.jsx
+│   │   │   ├── employeeSlice.js
+│   │   ├── dashboard/           # Role-based dashboards
+│   │   │   ├── EmployeeDashboard.jsx
+│   │   │   ├── ManagerDashboard.jsx
+│   │   │   └── HRDashboard.jsx
+│
+│   ├── pages/                   # Route-level pages
+│   │   ├── LoginPage.jsx
+│   │   ├── LeaveApplicationPage.jsx
+│   │   ├── AdminPanel.jsx
+│   │   └── NotFound.jsx
+│
+│   ├── routes/                  # Route definitions
+│   │   ├── AppRoutes.jsx
+│   │   ├── ProtectedRoute.jsx   # Role-based route wrapper
+│
+│   ├── services/                # API simulation and data persistence
+│   │   ├── leaveService.js
+│   │   ├── employeeService.js
+│   │   └── authService.js
+│
+│   ├── store/                   # Redux or Zustand store
+│   │   ├── store.js
+│   │   └── rootReducer.js
+│
+│   ├── hooks/                   # Custom React hooks
+│   │   └── useAuth.js
+│
+│   ├── utils/                   # Utility functions
+│   │   ├── dateUtils.js
+│   │   └── roleUtils.js
+│
+│   ├── styles/                  # Global CSS or Tailwind config
+│   │   └── main.css
+│
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── .gitignore
+├── package.json
+├── README.md
+└── vite.config.js / webpack.config.js
+
+Leave Management System - 8-Day Development Schedule
+
+ Project Setup & Guidelines
+Tech Stack: React, Redux or Zustand, React Router, localStorage, Vite/Webpack
+Goal: Build a role-based leave management system with employee, manager, and HR functionalities.
+
+ Day 1: Project Setup & Authentication
+Goals:
+- Initialize project using Vite or Create React App
+- Setup folder structure and install basic dependencies
+- Build the login system (UI only)
+- Implement fake authentication using localStorage
+
+Tasks:
+- npx create-vite@latest leave-management-system
+- Install: react-router-dom, redux or zustand, classnames, chart.js (for donut), etc.
+- Create LoginPage.jsx with role-based redirection
+- Store user data (email & role) in localStorage
+- Setup basic routes
+
+ Day 2: Routing & Role-Based Navigation
+Goals:
+- Add protected routing
+- Implement role-based redirection and dashboard skeletons
+
+Tasks:
+- Create ProtectedRoute.jsx
+- Create Dashboard components: EmployeeDashboard.jsx, ManagerDashboard.jsx, HRDashboard.jsx
+- Implement navigation layout based on role
+
+ Day 3: Leave Application (Employee)
+Goals:
+- Create leave application form
+- Implement leave submission and store data in localStorage
+
+Tasks:
+- LeaveForm.jsx: date picker, leave type, reason
+- Store leave application in localStorage (leaveService.js)
+- Show success message on submit
+- Begin LeaveHistory.jsx for employee
+
+ Day 4: View Leave History & Balance
+Goals:
+- Show employee leave history with status
+- Display leave balance (donut chart)
+
+Tasks:
+- List leave applications with status
+- Create donut chart using react-chartjs-2 or similar
+- Subtract used leaves from fixed balance of 20
+
+ Day 5: Manager Approval Panel
+Goals:
+- Manager can view team requests
+- Approve/Reject functionality
+
+Tasks:
+- Filter leave applications by team
+- Buttons for approve/reject
+- Update status and persist
+
+ Day 6: HR Admin Panel - Employee Management
+Goals:
+- HR can manage employees (CRUD)
+- Assign/change manager, change roles
+
+Tasks:
+- Employee list with edit/delete options
+- Form to add/edit employee
+- Use localStorage to persist employee data
+- Role and manager assignment
+
+ Day 7: HR View All Leaves & Summary
+Goals:
+- HR can view company-wide leave summary
+- Show all leave requests
+
+Tasks:
+- Display all leaves from all users
+- Filter by type/status/date if time permits
+- Summary stats (optional pie/bar chart)
+
+ Day 8: Final Touches, Responsiveness & Documentation
+Goals:
+- Final testing
+- Responsive styling (basic mobile/tablet support)
+- Write README.md with:
+  - Project overview
+  - How to run
+  - Feature list
+  - Folder structure
+  - This day-by-day plan
+
+Tasks:
+- Polish UI
+- Add comments and JSDoc
+- Clean up unused code/files
+- Commit final version

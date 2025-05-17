@@ -1,0 +1,488 @@
+:root {
+    --primary-bg-color: rgb(202, 199, 199);
+    --border-color: rgba(167, 164, 164, 0.767);
+    --primary-color: rgba(6, 65, 115, 1);
+    --secondary-color: #e6edff;
+    --primary-border-color: #ee9c38;
+    --background-blur-color: rgb(174, 174, 174);
+    --primary-font-color: white;
+    --secondary-font-color: rgb(17, 17, 17);
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --pending-font-color: rgba(255, 115, 0, 0.792);
+    --success-font-color: rgb(2, 111, 2);
+    --reject-font-color: rgb(247, 8, 8);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paltech-cover {
+    width: 50vw;
+    height: 100vh;
+}
+
+.paltech-logo {
+    height: 35px;
+    margin-right: 0.25rem;
+    border-radius: 0.2rem;
+    width: 35px;
+}
+
+.form-wrapper {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+
+.form-wrapper .form-container {
+    min-width: 50%;
+}
+
+.disable-containter,
+button:disabled {
+    background-color: var(--background-blur-color);
+    filter: brightness(0.5);
+    pointer-events: none;
+}
+
+.disbale-pointer-events {
+    pointer-events: none;
+}
+
+
+.leave-history-container,
+.leave-balance-card,
+.profile-containter {
+    box-shadow: 0 0 0.625rem var(--box-shadow-color);
+    padding: 1.5rem;
+    border-radius: 0.825rem;
+    width: 100%;
+} 
+
+
+
+h2 {
+    color: var(--primary-color);
+}
+
+.show-pop-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.show-pop-up h1 {
+    text-align: center;
+    color: var(--primary-color)
+}
+
+.filter-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-container div {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-container label {
+    font-size: 0.9rem;
+}
+
+.btn-container {
+    display: flex;
+    margin: 0.25rem 0;
+    gap: 2rem;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.825rem;
+    margin-bottom: 0.25rem;
+}
+
+.hr-container,
+.manager-container,
+.employee-container {
+    padding: 1rem;
+    min-height: 90vh;
+}
+
+.hr-container h1,
+.employee-container h1,
+.manager-container h1 {
+    color: var(--primary-color);
+}
+
+.heading {
+    color: var(--primary-color);
+    margin-left: 1rem;
+}
+
+.form-pop-up {
+    display: none;
+    background-color: var(--primary-font-color);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.825rem;
+    padding: 2rem;
+    margin: 0.5rem 0rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    min-width: 25%;
+}
+
+.form-container h1,
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.form-container input,
+select,
+textarea {
+    padding: 0.4rem 0.2rem;
+    margin: 0.5rem 0rem;
+    border-radius: 0.2rem;
+    border: 2px solid var(--border-color);
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-container label {
+    font-size: 1rem;
+}
+
+.pending,
+.cancelled,
+.approved,
+.rejected {
+    font-weight: bold;
+}
+
+.pending {
+    color: var(--pending-font-color);
+}
+
+.cancelled,
+.rejected {
+    color: var(--reject-font-color);
+}
+
+.approved {
+    color: var(--success-font-color)
+}
+
+.form-container button {
+    align-self: center;
+    width: 100%;
+}
+
+.table-container {
+    margin: 2rem auto;
+    padding: 1rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.825rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    border-radius: 0.625rem;
+}
+
+thead {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+h3 {
+    text-align: center;
+    color: var(--primary-border-color)
+}
+
+tr {
+    border-radius: 0.625rem;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.825rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    margin-right: 5px;
+}
+
+.remove-btn,
+.cancel-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.cancel-btn {
+    font-size: 1rem;
+}
+
+.add-btn,
+.submit-btn {
+    background-color: var(--primary-color);
+    font-size: 1rem;
+    color: var(--primary-font-color);
+}
+
+.req-leave-btn {
+    margin-bottom: 1rem;
+}
+
+.action-btn {
+    padding: 0;
+}
+
+.action-btn select {
+    border: none;
+    cursor: pointer;
+    background-color: var(--button-primary-color);
+    color: var(--primary-font-color)
+}
+
+.action-btn option {
+    background-color: var(--primary-font-color);
+    color: var(--secondary-font-color);
+}
+
+.actions-btn-cont {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.625rem;
+}
+
+select:disabled {
+    background-color: var(--background-blur-color);
+}
+
+.leave-history-cont {
+    overflow-x: auto;
+}
+
+.donut-cont {
+    display: flex;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 10px rgb(235, 102, 102));
+    }
+
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 15px rgb(255, 208, 110));
+    }
+}
+
+.donut-cont div {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.paid-btn,
+.unpaid-btn {
+    color: var(--primary-font-color);
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+.paid-btn {
+    background-color: rgb(235, 102, 102);
+}
+
+.unpaid-btn {
+    background-color: rgb(255, 208, 110);
+}
+
+.employee-header {
+    display: flex;
+}
+
+@media (max-width:640px) {
+
+    .profile-containter {
+        margin-bottom: 1rem;
+    }
+
+    .employee-header {
+        flex-wrap: wrap;
+    }
+
+    .paltech-cover {
+        display: none;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width:640px) {
+    .profile-containter {
+        margin-right: 2rem;
+    }
+}
+
+.navbar-containter {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.nav-buttons-container button {
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    font-size: 1rem;
+}
+
+.nav-buttons-container button:hover {
+    border-bottom: solid 5px var(--primary-border-color);
+    border-radius: 0px;
+}
+
+.unstyled-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout-btn {
+    background-color: var(--primary-border-color);
+    padding: 0.625rem;
+    font-size: 1rem;
+    color: var(--primary-font-color);
+    border-radius: 0.25rem;
+}
+
+.paltech-logo-new {
+    width: 10%;
+}
+
+@media (max-width:840px) {
+    .paltech-logo-new {
+        width: 25%;
+    }
+}
+
+@media (max-width:640px) {
+    .form-container {
+        width: 90%
+    }
+}
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.not-found-image {
+    height: 80vh;
+}
+
+.pal-tech-profile {
+    border-radius: 50%;
+    width: 25%;
+    align-self: center;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header b {
+    color: var(--primary-color);
+}
+
+.profile-header p {
+    font-size: 1.2rem;
+}
+
+.loader-containter {
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    border: 0.325rem solid var(--secondary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-top: 0.325rem solid var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
