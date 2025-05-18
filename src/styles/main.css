@@ -1,11 +1,12 @@
 :root {
     --primary-bg-color: rgb(202, 199, 199);
     --border-color: rgba(167, 164, 164, 0.767);
-    --primary-color: rgba(6, 65, 115, 1);
+    --primary-color: rgb(8, 59, 103); 
+    --primary-dark-color:rgb(10, 52, 88); 
     --secondary-color: #e6edff;
     --primary-border-color: #ee9c38;
     --background-blur-color: rgb(174, 174, 174);
-    --primary-font-color: white;
+    --primary-font-color: #ffffff;
     --secondary-font-color: rgb(17, 17, 17);
     --box-shadow-color: rgba(0, 0, 0, 0.1);
     --pending-font-color: rgba(255, 115, 0, 0.792);
@@ -358,39 +359,6 @@ select:disabled {
     display: flex;
 }
 
-.navbar-containter {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--primary-color);
-    margin: 0;
-    padding: 1.5rem;
-}
-
-.nav-buttons-container button {
-    background-color: var(--primary-color);
-    color: var(--primary-font-color);
-    font-size: 1rem;
-}
-
-.nav-buttons-container button:hover {
-    border-bottom: solid 5px var(--primary-border-color);
-    border-radius: 0px;
-}
-
-.unstyled-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.logout-btn {
-    background-color: var(--primary-border-color);
-    padding: 0.625rem;
-    font-size: 1rem;
-    color: var(--primary-font-color);
-    border-radius: 0.25rem;
-}
-
 .paltech-logo-new {
     width: 15%;
 }
@@ -446,27 +414,67 @@ select:disabled {
     cursor: pointer;
 }
 
+.navbar-containter {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 1.5rem;
+}
 
-.hide-nav-bar {
-    display: none;
+.nav-buttons-container button,
+.mobile-navbar-btn {
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.nav-buttons-container button:hover {
+    border-bottom: solid 5px var(--primary-border-color);
+    border-radius: 0px;
+}
+
+.unstyled-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout-btn {
+    background-color: var(--primary-border-color);
+    padding: 0.625rem;
+    font-size: 1rem;
+    color: var(--primary-font-color);
+    border-radius: 0.25rem;
 }
 
 .mobile-navbar {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    position: absolute;
     background-color: var(--primary-color);
 }
 
-.mobile-navbar button {
+.mobile-navbar-btn { 
+    background-color: var(--primary-dark-color);
     padding: 1rem 0.5rem;
-    border: none;
     border-radius: 0;
-    font-size: 1.25rem; 
-    text-align: left; 
-    font-weight:600;
-    color: var(--primary-font-color);
+    text-align: left;
     outline: 1px solid var(--secondary-color);
-    background-color: var(--primary-color);
+}
+
+.hide-nav-bar {
+    display: none;
+}
+
+.mobile-navbar-logout-cont {
+    margin: 0.5rem 0.5rem;
+}
+
+.mobile-navbar-logout-cont .logout-btn {
+    width: 100%;
 }
 
 @keyframes spin {
@@ -482,6 +490,11 @@ select:disabled {
 @media (min-width:960px) {
     .profile-containter {
         margin-right: 2rem;
+    }
+
+    .mobile-navbar,
+    .none-button {
+        display: none;
     }
 }
 
@@ -509,6 +522,11 @@ select:disabled {
     .paltech-logo-new {
         width: 25%;
     }
+
+    .navbar-containter div {
+        display: none;
+    }
+
 }
 
 @media (max-width:640px) {

@@ -76,8 +76,8 @@ const LeaveHistory = () => {
             dispatch(setUpdateLeaveItem(item))
         };
         setActionValue('')
-    }
-
+    } 
+    
     return (
         <div className="leave-history-cont">
             <FilterContainter />

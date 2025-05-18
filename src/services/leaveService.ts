@@ -57,6 +57,6 @@ export const {
     useGetLeaveByUserQuery,
     useLazyGetLeaveByUserQuery,
     useGetLeaveByManagerQuery,
-    useUpdateLeaveByIdMutation, 
+    useUpdateLeaveByIdMutation,
     useDeleteLeavesByIdMutation
 } = leaveApi;
