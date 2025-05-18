@@ -74,9 +74,7 @@ button:disabled {
     padding: 1.5rem;
     border-radius: 0.825rem;
     width: 100%;
-} 
-
-
+}
 
 h2 {
     color: var(--primary-color);
@@ -214,6 +212,7 @@ textarea {
     width: 100%;
 }
 
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -314,7 +313,7 @@ select:disabled {
     overflow-x: auto;
 }
 
-.donut-cont {
+.donut-container {
     display: flex;
 }
 
@@ -334,7 +333,7 @@ select:disabled {
     }
 }
 
-.donut-cont div {
+.donut-container div {
     display: flex;
     align-items: center;
     gap: 0.625rem;
@@ -357,31 +356,6 @@ select:disabled {
 
 .employee-header {
     display: flex;
-}
-
-@media (max-width:640px) {
-
-    .profile-containter {
-        margin-bottom: 1rem;
-    }
-
-    .employee-header {
-        flex-wrap: wrap;
-    }
-
-    .paltech-cover {
-        display: none;
-    }
-
-    .form-wrapper {
-        width: 100%;
-    }
-}
-
-@media (min-width:640px) {
-    .profile-containter {
-        margin-right: 2rem;
-    }
 }
 
 .navbar-containter {
@@ -418,19 +392,7 @@ select:disabled {
 }
 
 .paltech-logo-new {
-    width: 10%;
-}
-
-@media (max-width:840px) {
-    .paltech-logo-new {
-        width: 25%;
-    }
-}
-
-@media (max-width:640px) {
-    .form-container {
-        width: 90%
-    }
+    width: 15%;
 }
 
 .not-found-container {
@@ -477,6 +439,36 @@ select:disabled {
     animation: spin 1s linear infinite;
 }
 
+.none-button {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.hide-nav-bar {
+    display: none;
+}
+
+.mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+}
+
+.mobile-navbar button {
+    padding: 1rem 0.5rem;
+    border: none;
+    border-radius: 0;
+    font-size: 1.25rem; 
+    text-align: left; 
+    font-weight:600;
+    color: var(--primary-font-color);
+    outline: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -484,5 +476,65 @@ select:disabled {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (min-width:960px) {
+    .profile-containter {
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width:960px) {
+    .form-container {
+        width: 90%
+    }
+
+    .profile-containter {
+        margin-bottom: 1rem;
+    }
+
+    .employee-header {
+        flex-wrap: wrap;
+    }
+
+    .paltech-cover {
+        display: none;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+    .paltech-logo-new {
+        width: 25%;
+    }
+}
+
+@media (max-width:640px) {
+    h1 {
+        font-size: 1.625rem;
+    }
+
+    .profile-header p {
+        font-size: 0.9rem;
+    }
+
+    .paid-btn,
+    .unpaid-btn,
+    .add-btn,
+    .cancel-btn,
+    .submit-btn {
+        font-size: 0.825rem
+    }
+}
+
+@media (max-width:1200px) {
+    .donut-container {
+        flex-direction: column;
+    }
+
+    .donut-container div {
+        justify-content: center;
     }
 }

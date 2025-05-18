@@ -25,8 +25,8 @@ const EmployeeDashboard: React.FC = () => {
     const showLeavePopUp = (value: boolean): void => {
         dispatch(setShowPopUp(value))
         dispatch(setLeaveInitialData(null))
-    }
-
+    } 
+    
     const location = useLocation();
     const isLeaveHistoryRoute = location.pathname.includes('leave-history'); 
     return (

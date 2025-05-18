@@ -52,4 +52,22 @@ export interface EmployeeDataProps {
 export interface LeaveBalanceCardProps {
     leaveData: Leave[],
     employeeData: Employee
+}
+
+export interface LeaveState {
+    initialData: Leave | null,
+    updateLeaveItem: Leave | null,
+    refetchLeaveHistory: boolean,
+    leaveTypeFilter: string,
+    leaveStatusFilter: string
 } 
+
+export interface EmployeeState {
+    initialData: Employee | null,
+    showCancelPopUp: boolean
+} 
+
+export interface ManagerState {
+    actionStatus: string,
+    leaveData: Leave | null
+}

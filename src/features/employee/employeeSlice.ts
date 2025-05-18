@@ -1,10 +1,7 @@
-import { Employee } from "../../Types"
+import { Employee ,EmployeeState} from "../../Types"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-interface EmployeeState {
-    initialData: Employee | null,
-    showCancelPopUp: boolean
-}
+
 const initialState: EmployeeState = {
     initialData: null,
     showCancelPopUp: false

@@ -1,12 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { Leave } from "../../Types"
-interface LeaveState {
-    initialData: Leave | null,
-    updateLeaveItem: Leave | null,
-    refetchLeaveHistory: boolean,
-    leaveTypeFilter: string,
-    leaveStatusFilter: string
-}
+import { Leave,LeaveState } from "../../Types"
+
 const initialState: LeaveState = {
     initialData: null,
     updateLeaveItem: null,

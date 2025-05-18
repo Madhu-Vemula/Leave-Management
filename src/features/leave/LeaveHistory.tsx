@@ -30,7 +30,6 @@ const LeaveHistory = () => {
                 try {
                     const response = await triggerGetLeaveByUser(user.email).unwrap();
                     setLeavesData(response)
-                    console.log(response)
                 }
                 catch (error: any) {
                     alert(`Error Message ${error.message}`)

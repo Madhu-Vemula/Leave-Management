@@ -8,7 +8,7 @@ import { setShowPopUp } from "../../store/uiSlice";
 import { useUpdateEmployeeMutation } from "../../services/employeeService";
 import { getUserFromSession, getUserMailFromSession } from "../../utils/roleUtils";
 import { setRefetchLeaveHistory } from "./leaveSlice"
-import { compareUpdatedData } from "../../utils/leaveUtils";
+import { checkDuplicatedLeaves, compareUpdatedData } from "../../utils/leaveUtils";
 
 const LeaveForm: React.FC<EmployeeDataProps> = (props) => {
     const { employeeData } = props
@@ -20,8 +20,7 @@ const LeaveForm: React.FC<EmployeeDataProps> = (props) => {
     const [submitLeave] = useSubmitLeaveMutation();
     const [updateLeaveById] = useUpdateLeaveByIdMutation();
     const [updateEmployee] = useUpdateEmployeeMutation();
-    const { data: allLeaveData = [] } = useGetLeaveByUserQuery(userEmail); 
-    console.log(allLeaveData)
+    const { data: allLeaveData = [] } = useGetLeaveByUserQuery(userEmail);
     const [leaveForm, setLeaveForm] = useState<Leave>(
         initialLeaveData ?? {
             empId: '',
@@ -72,16 +71,19 @@ const LeaveForm: React.FC<EmployeeDataProps> = (props) => {
         const dayDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24)) + 1;
         if (dayDifference < 0) {
             setHasError(true);
-        }
+        } 
+
+        if (!checkDuplicatedLeaves(allLeaveData, leaveForm.startDate, leaveForm.endDate)) {
+            setErrorMessage("You already applied for specific dates")
+            return
+        } 
+
         if (initialLeaveData) {
             if (leaveForm.leaveType === "paid" && initialLeaveData.leaveType === "unpaid") {
                 if (employeeData.leaveBalance - dayDifference < 0) {
                     setErrorMessage("Your paid leaves are not enough!")
                     return
                 }
-            }
-            else if (leaveForm.leaveType === "unpaid" && initialLeaveData.leaveType === "paid") {
-
             }
         }
         else {
@@ -90,7 +92,6 @@ const LeaveForm: React.FC<EmployeeDataProps> = (props) => {
                 return
             }
         }
-
 
         const user = getUserFromSession()
         const updatedDayDifference = dayDifference ?? 1;
@@ -136,8 +137,8 @@ const LeaveForm: React.FC<EmployeeDataProps> = (props) => {
                 const responseData = await submitLeave(leaveData).unwrap()
                 console.log(responseData);
             }
-            catch (error: any) {
-                alert(`Error Message, ${error.message}`)
+            catch (error) {
+                alert(`Error Message, ${error}`)
             }
         }
         else {
@@ -150,8 +151,8 @@ const LeaveForm: React.FC<EmployeeDataProps> = (props) => {
                 const responseData = await updateLeaveById(updatedData).unwrap();
                 console.log(responseData);
             }
-            catch (error: any) {
-                alert(`Error Message ,${error.message}`)
+            catch (error) {
+                alert(`Error Message ,${error}`)
             }
         }
         dispatch(setShowPopUp(false));

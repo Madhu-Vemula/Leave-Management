@@ -1,9 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Leave } from "../../Types";
-interface ManagerState {
-    actionStatus: string,
-    leaveData: Leave | null
-}
+import { Leave, ManagerState } from "../../Types";
 
 const initialState: ManagerState = {
     actionStatus: '',
